@@ -22,6 +22,7 @@ const server = http
           '<li><a href="/enquetes/yaki-shabu">焼き肉・しゃぶしゃぶ</a></li>' +
           '<li><a href="/enquetes/rice-bread">ごはん・パン</a></li>' +
           '<li><a href="/enquetes/sushi-pizza">寿司・ピザ</a></li>' +
+          '<li><a href="/enquetes/pancake-hotcake">パンケーキ・ホットケーキ</a></li>' +
           '</ul></body></html>');
         }else if (req.url === '/enquetes/yaki-shabu') {
           res.write(
@@ -44,6 +45,12 @@ const server = http
             path: req.url,
             firstItem: '寿司',
             secondItem: 'ピザ'
+          }));
+        } else if (req.url === '/enquetes/pancake-hotcake'){
+          res.write(pug.renderFile('./form.pug' , {
+            path: req.url,
+            firstItem: 'パンケーキ',
+            secondItem: 'ホットケーキ'
           }));
         }
         res.end();
